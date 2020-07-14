@@ -1,6 +1,9 @@
 from django.shortcuts import render
 from django.http import HttpResponse
-# Create your views here.
+from .models import Books
 
+#Get books and display them
 def index(request):
-    return HttpResponse("Hello world!")
+    b = Books.objects.all()
+    
+    return HttpResponse(b)
